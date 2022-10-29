@@ -1,0 +1,2 @@
+package codeptit.J04002_KHAI_BAO_LOP_HINH_CHU_NHAT;public class J04002_KHAI_BAO_LOP_HINH_CHU_NHAT {
+}

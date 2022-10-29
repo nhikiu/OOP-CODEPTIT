@@ -1,0 +1,2 @@
+package codeptit.J05030_BANG_DIEM_THANH_PHAN_1;public class J05030_BANG_DIEM_THANH_PHAN_1 {
+}
