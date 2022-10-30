@@ -1,3 +1,5 @@
+package codeptit.J07054_TINH_DIEM_TRUNG_BINH;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.BigInteger;
@@ -102,4 +104,3 @@ class Student implements Comparable<Student>{
         return (Double.parseDouble(getMark()) < Double.parseDouble(o.getMark())) ? 1 : -1;
     }
 }
-
