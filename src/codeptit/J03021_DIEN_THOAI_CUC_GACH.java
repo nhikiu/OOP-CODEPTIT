@@ -1,10 +1,8 @@
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+package codeptit;
+
 import java.util.Scanner;
 
-public class Main {
+public class J03021_DIEN_THOAI_CUC_GACH {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = Integer.parseInt(sc.nextLine());
@@ -41,4 +39,3 @@ public class Main {
         return res;
     }
 }
-
