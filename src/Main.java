@@ -1,48 +1,34 @@
-import java.io.*;
-import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+import java.util.TreeMap;
 
 public class Main {
-    private static boolean thuanNghich(String s) {
-        for (int i = 0; i <= s.length() / 2; i++) {
-            if (s.charAt(i) != s.charAt(s.length() - 1 - i)) {
-                return false;
-            }
-        }
-        return true;
-    }
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(new File("inp.txt"));
+        HashMap<String, Integer> map = new HashMap<>();
         ArrayList<String> list = new ArrayList<>();
-        while (sc.hasNext()) {
-            String[] tmp = sc.nextLine().split("\\s+");
-            for (int i = 0; i < tmp.length; i++) {
-                if (thuanNghich(tmp[i])) {
-                    list.add(tmp[i]);
+        int t = Integer.parseInt(sc.nextLine());
+        while (t-- > 0) {
+            String[] s = sc.nextLine().trim().toLowerCase().replaceAll("\\W+", " ").split("\\s+");
+            for (int i = 0; i < s.length; i++) {
+                if (map.containsKey(s[i])) {
+                    map.put(s[i], map.get(s[i]) + 1);
+                } else {
+                    list.add(s[i]);
+                    map.put(s[i], 1);
                 }
             }
         }
 
-        HashMap<String, Integer> hashMap = new HashMap<>();
-        for (String s : list) {
-            if (hashMap.containsKey(s)) {
-                hashMap.replace(s, hashMap.get(s) + 1);
-            } else {
-                hashMap.put(s, 1);
+        list.sort((o1, o2) -> {
+            if (map.get(o1) == map.get(o2)) {
+                return o1.compareTo(o2);
             }
-        }
-
-        final int[] max = {0};
-        hashMap.forEach((k, v) -> {
-            if (k.length() > max[0]) {
-                max[0] = k.length();
-            }
+            return map.get(o1) < map.get(o2) ? 1 : -1;
         });
-
-        hashMap.forEach((k, v) -> {
-            if (k.length() == max[0]) {
-                System.out.println(k + " " + v);
-            }
-        });
+        list.forEach(s -> System.out.println(s + " " + map.get(s)));
     }
 }
