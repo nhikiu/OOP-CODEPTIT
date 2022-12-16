@@ -15,7 +15,7 @@ Thời gian: 60 phút
 1. Lớp xử lý số nguyên 
 2. Lớp xử lý xâu
 3. Lớp liên quan đến đa thức
-4. Lớp Main(chứa menu)
+4. Lớp J06005_QUAN_LY_BAN_HANG_1.Main(chứa menu)
 Chú ý: với các câu hỏi khác nhau(trong cùng 1 lớp) có thể nhập lại
 
 
